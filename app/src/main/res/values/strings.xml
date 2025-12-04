@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ForClassify</string>
+    <string name="label_app_list">App 列表</string>
+    <string name="label_usage_stats">使用统计</string>
+    <string name="label_ai_classifier">AI 分类</string>
+    <string name="label_app_launcher">应用启动</string>
+    <string name="label_settings">设置</string>
+    <string name="label_permission_guide">权限引导</string>
 </resources>
