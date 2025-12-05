@@ -8,16 +8,16 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="tds.analytics.classify.ui.home.HomeFragment"
-        android:label="@string/label_home"
-        tools:layout="@layout/fragment_home"
-        />
+        android:label="首页">
 
-    <action android:id="@+id/action_home_to_app_list1"
-        app:destination="@+id/app_list1"/>
+        <action
+            android:id="@+id/action_home_to_app_list1"
+            app:destination="@id/app_list1"/>
+    </fragment>
 
     <fragment
         android:id="@+id/app_list1"
-        android:name="tds.analytics.classify.ui.home.ApplistFragment"
+        android:name="tds.analytics.classify.ui.home.FragmentAppList"
         android:label="软件列表"
         tools:layout="@layout/fragment_applist" />
 </navigation>
