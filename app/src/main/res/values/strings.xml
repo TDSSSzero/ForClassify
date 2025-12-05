@@ -6,4 +6,5 @@
     <string name="label_app_launcher">应用启动</string>
     <string name="label_settings">设置</string>
     <string name="label_permission_guide">权限引导</string>
+    <string name="label_home">首页</string>
 </resources>
