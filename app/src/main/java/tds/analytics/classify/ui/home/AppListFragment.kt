@@ -24,6 +24,7 @@ class FragmentAppList : Fragment() {
     ): View? {
         _binding = FragmentApplistBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
         return root
     }
 }
