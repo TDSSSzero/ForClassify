@@ -1,19 +1,20 @@
 package tds.analytics.classify.ui.home
 
+import tds.analytics.classify.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import tds.analytics.classify.databinding.FragmentApplistBinding
 import tds.analytics.classify.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
+class FragmentAppList : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentApplistBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -21,15 +22,8 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentApplistBinding.inflate(inflater, container, false)
         val root: View = binding.root
         return root
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.textHome.text = "Welcome, Home"
-        binding.toAppList1.
-    }
-
 }

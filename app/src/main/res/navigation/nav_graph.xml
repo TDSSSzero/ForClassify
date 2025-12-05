@@ -12,4 +12,12 @@
         tools:layout="@layout/fragment_home"
         />
 
+    <action android:id="@+id/action_home_to_app_list1"
+        app:destination="@+id/app_list1"/>
+
+    <fragment
+        android:id="@+id/app_list1"
+        android:name="tds.analytics.classify.ui.home.ApplistFragment"
+        android:label="软件列表"
+        tools:layout="@layout/fragment_applist" />
 </navigation>
