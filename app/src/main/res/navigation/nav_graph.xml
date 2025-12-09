@@ -13,6 +13,10 @@
         <action
             android:id="@+id/action_home_to_app_list1"
             app:destination="@id/app_list1"/>
+        <action
+            android:id="@+id/action_home_to_gridview"
+            app:destination="@+id/gridview"/>
+
     </fragment>
 
     <fragment
@@ -20,4 +24,11 @@
         android:name="tds.analytics.classify.ui.home.FragmentAppList"
         android:label="软件列表"
         tools:layout="@layout/fragment_applist" />
+
+    <fragment
+        android:id="@+id/gridview"
+        android:name="tds.analytics.classify.ui.home.FragmentGridview"
+        android:label="九宫格"
+        tools:layout="@layout/fragment_gridview" />
+
 </navigation>

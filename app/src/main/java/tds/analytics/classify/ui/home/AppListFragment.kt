@@ -41,4 +41,8 @@ class FragmentAppList : Fragment() {
         )
         binding.listView.adapter = adapter
     }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

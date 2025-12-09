@@ -38,6 +38,9 @@ class HomeFragment : Fragment() {
         binding.toAppList1.setOnClickListener {
             findNavController().navigate(R.id.action_home_to_app_list1)
         }
+        binding.toGridview.setOnClickListener{
+            findNavController().navigate(R.id.action_home_to_gridview)
+        }
     }
     override fun onDestroyView() {
         super.onDestroyView()
