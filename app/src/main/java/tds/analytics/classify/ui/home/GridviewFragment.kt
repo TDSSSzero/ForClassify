@@ -1,12 +1,15 @@
 package tds.analytics.classify.ui.home
 
+import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.BaseAdapter
 import android.widget.ImageView
+import android.graphics.Color
 import androidx.fragment.app.Fragment
 import tds.analytics.classify.databinding.FragmentGridviewBinding
 import tds.analytics.classify.R
@@ -40,15 +43,18 @@ class FragmentGridview : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupGridView()
+        binding.gridview.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
+            showImageFullScreen(imageResources[position])
+        }
     }
     private fun setupGridView(){
-        binding.gridview.adapter = ImageGridAdapter(requireContext(), imageResources)
+        binding.gridview.adapter = BaseGridAdapter(requireContext(), imageResources)
     }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-    private class ImageGridAdapter(
+    private class BaseGridAdapter(
         private val context: Context,
         private val images: List<Int>
     ) : BaseAdapter() {
@@ -61,5 +67,17 @@ class FragmentGridview : Fragment() {
             imageView.setImageResource(images[position])
             return view
         }
+    }
+    private fun showImageFullScreen(imageRes: Int) {
+        val dialog = Dialog(requireContext(), android.R.style.Theme_Black_NoTitleBar_Fullscreen)
+        val imageView = ImageView(requireContext()).apply {
+            setImageResource(imageRes)
+            layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+            scaleType = ImageView.ScaleType.FIT_CENTER
+            setBackgroundColor(Color.BLACK)
+            setOnClickListener { dialog.dismiss() }
+        }
+        dialog.setContentView(imageView)
+        dialog.show()
     }
 }
